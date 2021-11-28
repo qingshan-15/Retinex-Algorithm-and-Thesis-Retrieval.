@@ -29,10 +29,10 @@ $$
 \hline
 硬件 & 型号\\\\
 \hline
-中央处理器 & Intel(R) \ Core(TM) \ i5-8300H \ CPU@2.30GHz，2301 Mhz \\\\
-显卡 & NVIDIA \ GeForce \ GTX \ 1050 \ Ti \\\\
-内存1 & Samsung \ DDR4 \ 2666MHz \ 8GB \\\\
-内存2 & Goldkey \ DDR4 \ 2666MHz \ 8GB \\\\
+中央处理器 & Intel(R)\ Core(TM)\ i5-8300H\ CPU@2.30GHz，2301 Mhz \\\\
+显卡 & NVIDIA\ GeForce\ GTX\ 1050\ Ti \\\\
+内存1 & Samsung\ DDR4\ 2666MHz\ 8GB \\\\
+内存2 & Goldkey\ DDR4\ 2666MHz\ 8GB \\\\
 \hline
 \end{array}
 $$
@@ -44,9 +44,9 @@ $$
 \hline
 软件 & 型号 \\\\
 \hline
-Windows & 教育版 \ 21H1\\\\
-PyCharm\;2020.2.3 & 202.7660.27 \\
-Typora & 0.9.86 \\
+Windows & 教育版\ 21H1\\\\
+PyCharm\ 2020.2.3 & 202.7660.27 \\\\
+Typora & 0.9.86 \\\\
 python & 3.8 \\\\
 pip & 21.0.1 \\\\
 numpy & 1.19.2 \\\\ 
