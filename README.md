@@ -29,7 +29,7 @@ $$
 \hline
 硬件 & 型号 \\\\
 \hline
-中央处理器 & Intel(R)\ Core(TM)\ i5-8300H\ CPU@2.30GHz，2301 Mhz \\\\
+中央处理器 & Intel(R)\ Core(TM)\ i5-8300H\ CPU\ @2.30GHz，2301 Mhz \\\\
 显卡 & NVIDIA\ GeForce\ GTX\ 1050\ Ti \\\\
 内存1 & Samsung\ DDR4\ 2666MHz\ 8GB \\\\
 内存2 & Goldkey\ DDR4\ 2666MHz\ 8GB \\\\
