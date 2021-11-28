@@ -6,7 +6,6 @@ import os
 import cv2
 import json
 from matplotlib import pyplot as plt
-import numpy as np
 
 with open('resource/config.json', 'r') as f:
     config = json.load(f)
@@ -21,7 +20,7 @@ if length == 0:
 
 path_list = pu.mkdirByList(path, pu.getNameWithoutSuffix(img_list))
 
-# plt.figure()
+figure = plt.figure(figsize=(20, 10))
 
 for i in range(length):
 
@@ -92,4 +91,9 @@ for i in range(length):
     # plt.tight_layout()
 
 plt.tight_layout()
+result_path = path + 'results'
+if not os.path.exists(result_path):
+    os.mkdir(result_path)
+
 plt.show()
+figure.savefig(result_path + '/result.png')
