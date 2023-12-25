@@ -18,7 +18,7 @@ if length == 0:
     print('空文件夹')
     exit(0)
 
-path_list = pu.mkdirByList(path, pu.getNameWithoutSuffix(img_list))
+path_list = pu.mkdir_by_list(path, pu.get_name_without_suffix(img_list))
 
 figure = plt.figure(figsize=(20, 10))
 
@@ -29,7 +29,7 @@ for i in range(length):
 
     # 处理图像文件
     # MSR方法
-    img_msr = tr.MSR(img, config['sigma_list'])
+    img_msr = tr.msr(img, config['sigma_list'])
     # img_msr = np.uint8(np.minimum(np.maximum(msr * 255, 0), 255))
 
     # MSRCR方法
@@ -53,7 +53,7 @@ for i in range(length):
     )
 
     # 本篇论文算法
-    img_this_retinex = sr.thisRetinex(img, config['sigma_list'])
+    img_this_retinex = sr.this_retinex(img, config['sigma_list'])
 
     # 保存图片处理结果，如果文件不存在，则保存在指定的文件夹下面
     if not os.path.exists(path_list[i] + 'img_msr.png'):

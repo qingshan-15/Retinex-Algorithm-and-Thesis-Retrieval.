@@ -139,3 +139,4 @@ cython_debug/
 
 # special config
 data/
+!data/origin/*.png

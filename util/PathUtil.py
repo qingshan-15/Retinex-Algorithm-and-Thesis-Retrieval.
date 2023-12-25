@@ -1,7 +1,7 @@
 import os
 
 
-def getNameWithoutSuffix(file_list):
+def get_name_without_suffix(file_list):
     """
     获取文件名称，不包含后缀名
     :param file_list: 文件列表
@@ -14,7 +14,7 @@ def getNameWithoutSuffix(file_list):
     return name_list
 
 
-def mkdirByList(path, name_list):
+def mkdir_by_list(path, name_list):
     """
     根据相对路径创建文件夹，并返回创建的文件夹的相对路径
     :param path:

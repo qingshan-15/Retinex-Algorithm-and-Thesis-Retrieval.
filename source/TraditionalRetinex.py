@@ -2,7 +2,7 @@ import numpy as np
 import cv2
 
 
-def singleScaleRetinex(img, sigma, size=0):
+def single_scale_retinex(img, sigma, size=0):
     """
     单尺度Retinex
     :param size: 卷积核尺寸
@@ -15,7 +15,7 @@ def singleScaleRetinex(img, sigma, size=0):
     return retinex
 
 
-def multiScaleRetinex(img, sigma_list, size=0):
+def multi_scale_retinex(img, sigma_list, size=0):
     """
     多尺度Retinex
     :param size:
@@ -26,7 +26,7 @@ def multiScaleRetinex(img, sigma_list, size=0):
     np.seterr(divide='ignore', invalid='ignore')
     retinex = np.double(np.zeros_like(img))
     for sigma in sigma_list:
-        retinex += singleScaleRetinex(img, sigma, size)
+        retinex += single_scale_retinex(img, sigma, size)
 
     retinex = retinex / len(sigma_list)
     # print(size)
@@ -49,7 +49,7 @@ def quantify(img):
     return img_quantified
 
 
-def MSR(img, sigma_list):
+def msr(img, sigma_list):
     """
     MSR算法
     :param img:
@@ -59,12 +59,12 @@ def MSR(img, sigma_list):
     img = np.double(img) + 1.0
     img_msr = np.zeros_like(img)
     for i in range(img.shape[2]):
-        img_msr[:, :, i] = multiScaleRetinex(img[:, :, i] + 1.0, sigma_list)
+        img_msr[:, :, i] = multi_scale_retinex(img[:, :, i] + 1.0, sigma_list)
 
     return quantify(img_msr)
 
 
-def colorRestoration(img, alpha, beta):
+def color_restoration(img, alpha, beta):
     """
     色彩修复
     :param img:
@@ -120,9 +120,9 @@ def MSRCR(img, sigma_list, G, b, alpha, beta, low_clip, high_clip):
     np.seterr(divide='ignore', invalid='ignore')
     img = np.float64(img) + 1.0
 
-    img_retinex = multiScaleRetinex(img, sigma_list)
+    img_retinex = multi_scale_retinex(img, sigma_list)
 
-    img_color = colorRestoration(img, alpha, beta)
+    img_color = color_restoration(img, alpha, beta)
     img_msrcr = G * (img_retinex * img_color + b)
 
     img_msrcr = simplestColorBalance(img_msrcr, low_clip, high_clip)
@@ -146,7 +146,7 @@ def MSRCP(img, sigma_list, low_clip, high_clip):
 
     intensity = np.sum(img, axis=2) / img.shape[2]
 
-    retinex = multiScaleRetinex(intensity, sigma_list)
+    retinex = multi_scale_retinex(intensity, sigma_list)
 
     intensity = np.expand_dims(intensity, 2)
     retinex = np.expand_dims(retinex, 2)

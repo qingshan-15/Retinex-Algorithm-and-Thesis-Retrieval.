@@ -4,7 +4,7 @@ import numpy as np
 from util import ImageUtil as iu
 
 
-def thisRetinex(img, sigma_list, a=0.000001, d=2):
+def this_retinex(img, sigma_list, a=0.000001, d=2):
     """
     复现论文的算法
     :param img:

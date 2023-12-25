@@ -34,7 +34,7 @@ def quantizedSingledMSR(img, sigma_list, d=2):
     :return:
     """
     # 因为调用的是cv2中内置高斯滤波，最终结果与真实结果并不一样，即使将卷积核size作为参数传入
-    rout = re.multiScaleRetinex(np.double(img), sigma_list, size=3)
+    rout = re.multi_scale_retinex(np.double(img), sigma_list, size=3)
 
     mean = np.mean(rout)
 
