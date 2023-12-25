@@ -138,5 +138,5 @@ dmypy.json
 cython_debug/
 
 # special config
-data/
-!data/origin/
+/data/*
+!/data/origin/
